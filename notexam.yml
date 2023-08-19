@@ -1,0 +1,11 @@
+---
+- name: apache install and service start
+  hosts: prod
+  tasks:
+     - ansible.builtin.dnf:
+            name: httpd
+            state: present
+     - ansible.builtin.service:
+            name: httpd
+            state: started
+            enabled: yes
